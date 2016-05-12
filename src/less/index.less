@@ -1,0 +1,29 @@
+/**
+ * index
+ */
+
+body {
+    >.stage {
+        @taskbar-height: 39px;
+        .taskbar {
+            position: absolute;
+            height: @taskbar-height;
+            left: 0;
+            top: 0;
+            right: 0;
+        }
+        .desktop {
+            position: absolute;
+            top: @taskbar-height+1;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 3px;
+            overflow: hidden;
+        }
+        .panel-content-designer {
+            position: absolute;
+            background-image: url(../images/theme-light-lattice_bg.gif);
+        }
+    }
+}

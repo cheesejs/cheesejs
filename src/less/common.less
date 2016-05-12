@@ -1,0 +1,177 @@
+/**
+ * common
+ */
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    background-color: #777;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background-color: #777;
+}
+
+@common-font-size: 14px;
+@common-font-family: "Microsoft YaHei";
+@theme-light-common-color: #FFF;
+@theme-light-common-font-color: #000;
+body {
+    >.stage {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        font-size: @common-font-size;
+        font-family: @common-font-family;
+        background-image: url(../images/theme-light-desktop.jpg);
+        background-position: center;
+        background-size: cover;
+        background-color: @theme-light-common-color;
+        color: @theme-light-common-font-color;
+    }
+    >*:not(.stage) {
+        display: none;
+    }
+}
+
+
+/**
+ * panel-default
+ */
+@main-color:#0095DD;
+@panel-border-radius: 2px;
+@panel-title-height: 30px;
+.panel {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 300px;
+    height: 300px;
+    min-height: 250px;
+    min-width: 250px;
+    overflow: hidden;
+    border-radius: 2px;
+    background-color: #FFF;
+    border:solid 1px @main-color;
+    >.panel-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: @panel-title-height;
+        display: flex;
+        z-index: 1;
+        >.panel-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            cursor: move;
+        }
+        >.panel-tab {
+            font-size: 12px;
+            z-index: 0;
+            line-height: @panel-title-height;
+            cursor: default;
+            padding: 0px 0px 0px 5px;
+            margin: 2px 0px 0px 0px;
+            text-align: center;
+            >span {
+                padding: 3px 8px;
+                border-radius: 3px;
+            }
+        }
+        >.panel-tab:hover {
+            color: @main-color;
+        }
+        >.panel-tab.active {
+            border: none;
+            box-shadow: none;
+            background-color: transparent;
+            >span {
+                background-color: @main-color;
+                color: #FFF;
+            }
+        }
+    }
+    >.panel-content-list {
+        position: absolute;
+        top: @panel-title-height;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0px 0px @panel-border-radius @panel-border-radius;
+        background-color: transparent;
+        margin: 1px;
+        box-shadow: none;
+        >.panel-content {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            overflow: auto;
+            background-color: transparent;
+            >.panel-content-embed {
+                position: absolute;
+                top: 1px;
+                left: 1px;
+                bottom: 1px;
+                right: 1px;
+                margin: 1px;
+                border: solid 1px #F0F0F0;
+                box-shadow: none;
+                background-color: #F9F9F9;
+            }
+        }
+    }
+}
+
+
+/**
+ * resizable
+ */
+
+.ui-resizable-handle {
+    position: absolute;
+    font-size: 0.1px;
+    display: block;
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+.ui-resizable-se {
+    cursor: se-resize;
+    width: 12px;
+    height: 12px;
+    right: 1px;
+    bottom: 1px;
+}
+
+.ui-resizable-s {
+    cursor: s-resize;
+    height: 7px;
+    width: 100%;
+    bottom: 0px;
+    left: 0;
+}
+
+.ui-resizable-e {
+    cursor: e-resize;
+    width: 7px;
+    right: 0px;
+    top: 0;
+    height: 100%;
+}
